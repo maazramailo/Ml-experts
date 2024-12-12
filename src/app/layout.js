@@ -7,9 +7,11 @@ import Footer from "@/components/Footer";
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <Header />
-      <body className={`antialiased`}>{children}</body>
-      <Footer />
+      <body className={`antialiased`}>
+        <Header />
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }

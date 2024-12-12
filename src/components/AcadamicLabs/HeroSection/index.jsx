@@ -1,3 +1,4 @@
+"use client";
 import { useEffect, useReducer, Suspense } from "react";
 import Hero1 from "@/image/Home/NewLandingPage.webp";
 import ArrowRight from "@/image/Home/guidance_up-arrow.svg";
@@ -77,7 +78,6 @@ export default function HeroSection() {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          minHeight: window.innerWidth > 768 ? "100vh" : "70vh",
         }}
         className="flex items-center md:min-h-screen h-[70vh] justify-center"
       >

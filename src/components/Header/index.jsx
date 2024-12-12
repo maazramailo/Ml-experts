@@ -1,24 +1,12 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useRef } from "react";
 import MLLogo from "@/image/Home/MLLogo.png";
 
 export default function Header() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const location = usePathname();
-
-  const homeRef = useRef(null);
-  const servicesRef = useRef(null);
-  const portfolioRef = useRef(null);
-
-  const handleMouseEnter = () => {
-    setButtonBgColor("bg-gradient-to-r from-[#2671FF] to-[#F74C28]");
-  };
-
-  const handleMouseLeave = () => {
-    setButtonBgColor("bg-gradient-to-r from-[#F74C28] to-[#2671FF]");
-  };
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
@@ -29,35 +17,6 @@ export default function Header() {
     router.push(link);
     setMobileMenuOpen(false);
   };
-
-  useEffect(() => {
-    const sections = [
-      homeRef.current,
-      servicesRef.current,
-      portfolioRef.current,
-    ];
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {});
-      },
-      { threshold: 0.5 }
-    );
-
-    sections.forEach((section) => {
-      if (section) {
-        observer.observe(section);
-      }
-    });
-
-    return () => {
-      sections.forEach((section) => {
-        if (section) {
-          observer.unobserve(section);
-        }
-      });
-    };
-  }, []);
 
   const menu = [
     {
@@ -75,13 +34,6 @@ export default function Header() {
       isDesktop: true,
     },
     {
-      name: "Case studies",
-      link: "/#case-studies",
-      hash: "/#case-studies",
-      isMob: true,
-      isDesktop: true,
-    },
-    {
       name: "Advanced Projects",
       link: "/advanced_projects",
       hash: "/advanced_projects",
@@ -89,12 +41,27 @@ export default function Header() {
       isDesktop: true,
     },
     {
-      name: "Blog",
-      link: "/blog",
-      hash: "/blog",
-      isMob: false,
-      isDesktop: false,
+      name: " Academic lab",
+      link: "/academic-labs",
+      hash: "/academic-labs",
+      isMob: true,
+      isDesktop: true,
     },
+    {
+      name: " Experts",
+      link: "/#experts",
+      hash: "/#experts",
+      isMob: true,
+      isDesktop: true,
+    },
+    {
+      name: " About us",
+      link: "/#about-us",
+      hash: "/#about-us",
+      isMob: true,
+      isDesktop: true,
+    },
+
     {
       name: "Contact us",
       link: "/contactus",
@@ -105,7 +72,7 @@ export default function Header() {
   ];
 
   return (
-    <div className="fixed shadow-lg top-0 left-0 right-0 bg-[#111111] z-[1000]">
+    <section className="fixed shadow-lg top-0 left-0 right-0 bg-[#111111] z-[1000]">
       <div className="flex justify-between items-center bg-[#111111] px-4 lg:px-8 py-4">
         {/* Logo Section */}
         <div
@@ -129,7 +96,7 @@ export default function Header() {
               .map(({ name, link }) => (
                 <div
                   key={name}
-                  className={`cursor-pointer ${
+                  className={`cursor-pointer tracking-wide ${
                     location === link
                       ? "text-[#FF8F24] font-semibold"
                       : "text-[#fff] hover:text-[#FF8F24] hover:font-semibold"
@@ -145,10 +112,8 @@ export default function Header() {
         {/* Contact Button */}
         <div className="hidden lg:block">
           <button
-            className="rounded-lg px-4 py-2 text-white transition-all duration-500 bg-gradient-to-r from-[#F74C28] to-[#2671FF] hover:from-[#2671FF] hover:to-[#F74C28]"
+            className="rounded-lg tracking-wider px-4 py-2 text-white transition-all duration-500 bg-gradient-to-r from-[#F74C28] to-[#2671FF] hover:from-[#2671FF] hover:to-[#F74C28]"
             onClick={() => router.push("/contactus")}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
           >
             Contact us
           </button>
@@ -198,6 +163,6 @@ export default function Header() {
           </div>
         </div>
       )}
-    </div>
+    </section>
   );
 }
