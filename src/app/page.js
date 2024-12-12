@@ -1,14 +1,29 @@
-"use client";
-import HeroSection from "@/components/HomePage/HeroSection";
-export const metadata = {
-  title: "Leading AI ML Consulting | Expert Machine Learning Solutions",
-  description: "Transform your research and innovation with cutting-edge AI and ML solutions. As a premier AI ML consulting company, our machine learning experts specialize in deep tech, advanced algorithms, and scalable AI solutions for academia and industry. Contact us today!",
-};
-export default function Home() {
-  
+
+"use client"
+import NewHeroSection from "@/components/HomePage/NewHeroSection";
+import AboutUs from "@/components/HomePage/AboutUs";
+import Experts from "@/components/Experts";
+import DeepTech from "@/components/DeepTech";
+import AdvancedProject from "@/components/AdvancedProjects";
+import WhyChooseUs from "@/components/WhyChooseUs";
+import Testamonial from "@/components/Testimonial";
+import ActionSection from "@/components/ActionSection";
+
+export default function NewHome() {
   return (
-    <div className="flex   flex-col items-center gap-4 justify-center ">
-      <HeroSection />
+    <div className="flex   flex-col items-center gap-4 justify-center">
+
+      <NewHeroSection />
+      <AboutUs />
+      <Experts />
+      <DeepTech />
+      <AdvancedProject />
+      <WhyChooseUs />
+      <Testamonial />
+      <ActionSection />
+      {/* <Feature /> */}
+
+
     </div>
   );
 }
