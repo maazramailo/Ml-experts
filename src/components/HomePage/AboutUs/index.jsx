@@ -1,6 +1,9 @@
-// import AboutUsVideo from '@/image/Home/AboutUs.mp4';
-// import ReactPlayer from "react-player/lazy";
+
+import ReactPlayer from "react-player";
+
 export default function AboutUs() {
+
+    const videoUrl = "./AboutUs.mp4";
     return (
         <div
             className="w-full  flex flex-col gap-5 rounded-xl py-16 justify-center items-center"
@@ -32,15 +35,15 @@ export default function AboutUs() {
                 </p>
             </div>
             <div className="w-full flex justify-center items-center">
-                {/* <ReactPlayer
-                    url={AboutUsVideo}
+                <ReactPlayer
+                    url={videoUrl}
                     loop={true}
                     muted={true}
                     controls={true}
                     width="100%"
                     height="100%"
                     className="!w-[345px] !h-[200px] md:!w-[600px] md:!h-[338px] lg:!w-[800px] lg:!h-[450px] xl:!w-[1000px] xl:!h-[560px]"
-                /> */}
+                />
             </div>
         </div>
     );

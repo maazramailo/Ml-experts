@@ -1,0 +1,17 @@
+.mle_text_area > textarea {
+  font-family: "Poppins";
+}
+.mle_text_area > .ant-input-suffix {
+  transform: translateY(4px);
+}
+
+.mle_phone_input > .react-international-phone-input {
+  flex: 1;
+  min-height: 40px;
+  font-family: "Poppins";
+}
+.mle_phone_input
+  > .react-international-phone-country-selector
+  > .react-international-phone-country-selector-button {
+  min-height: 40px;
+}

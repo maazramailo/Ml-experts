@@ -8,6 +8,7 @@ import AdvancedProject from "@/components/AdvancedProjects";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import Testamonial from "@/components/Testimonial";
 import ActionSection from "@/components/ActionSection";
+import Feature from "@/components/HomePage/Feature/index";
 
 export default function NewHome() {
   return (
@@ -17,13 +18,11 @@ export default function NewHome() {
       <AboutUs />
       <Experts />
       <DeepTech />
+      <Feature />
       <AdvancedProject />
       <WhyChooseUs />
       <Testamonial />
       <ActionSection />
-      {/* <Feature /> */}
-
-
     </div>
   );
 }

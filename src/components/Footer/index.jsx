@@ -28,7 +28,7 @@ export default function Footer() {
     { href: "/blogs", title: "Advanced Projects", link: "/advanced_projects" },
   ];
   return (
-    <div className="pt-0  w-full bg-[#111111] text-white">
+    <section className="pt-0  w-full bg-[#111111] text-white">
       <div className=" pt-12 pb-4  mt-8 ">
         <div className=" flex md:flex-row flex-col text-center md:text-start justify-between  items-center gap-8 md:w-[90%] mx-auto">
           <div className="flex flex-col gap-4">
@@ -148,6 +148,6 @@ export default function Footer() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
