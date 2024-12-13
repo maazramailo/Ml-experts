@@ -103,10 +103,10 @@ export default function Footer() {
           <div className=" flex flex-col-reverse text-center md:text-start md:flex-row gap-6 md:gap-4">
             <p>© 2024 Ramailo Tech. All rights reserved.</p>
             <div className="flex flex-col md:flex-row gap-6 md:gap-4">
-              <a href="#" className="hover:underline" title="Privacy Policy">
+              <a href="/privacy_policy" className="hover:underline" title="Privacy Policy">
                 Privacy Policy
               </a>
-              <a href="#" className="hover:underline" title="Terms of Service">
+              <a href="/terms_conditions" className="hover:underline" title="Terms of Service">
                 Terms of Service
               </a>
               {/* <a href="#" className="underline">
