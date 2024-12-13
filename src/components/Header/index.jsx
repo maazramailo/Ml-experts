@@ -1,35 +1,43 @@
 "use client";
 import { useRouter, usePathname } from "next/navigation";
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import MLLogo from "@/image/Home/MLLogo.png";
 
 export default function Header() {
   const router = useRouter();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [hashs, setHashs] = useState("/");
   const location = usePathname();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  useEffect(() => {
+    setHashs(`/${window.location.hash}`);
+  }, [])
+
+
   const handleLinkClick = (e, link) => {
     e.preventDefault();
+    setHashs(link);
     router.push(link);
     setMobileMenuOpen(false);
   };
+
 
   const menu = [
     {
       name: "Home",
       link: "/#home",
-      hash: "#home",
+      hash: "/#home",
       isMob: true,
       isDesktop: true,
     },
     {
       name: "Services",
       link: "/#services",
-      hash: "#services",
+      hash: "/#services",
       isMob: true,
       isDesktop: true,
     },
@@ -96,7 +104,7 @@ export default function Header() {
               .map(({ name, link }) => (
                 <div
                   key={name}
-                  className={`cursor-pointer tracking-wide ${location === link
+                  className={`cursor-pointer tracking-wide ${hashs === link
                     ? "text-[#FF8F24] font-semibold"
                     : "text-[#fff] hover:text-[#FF8F24] "
                     }`}
