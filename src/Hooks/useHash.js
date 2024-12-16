@@ -1,4 +1,4 @@
-// useHash.js
+"use client"
 import { useState, useEffect } from 'react';
 
 export const useHash = () => {
@@ -15,6 +15,6 @@ export const useHash = () => {
       return () => window.removeEventListener('hashchange', onHashChange);
     }
   }, []);
-  
+
   return hash;
 };

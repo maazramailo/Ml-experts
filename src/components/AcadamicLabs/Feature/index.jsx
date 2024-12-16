@@ -183,7 +183,7 @@ function Feature() {
   };
 
   return (
-    <section className="justify-center items-center w-full flex flex-col gap-6 md:gap-12  mt-40 ">
+    <section className="justify-center items-center w-full flex flex-col gap-6 md:gap-12  mt-40">
       <div className="justify-center items-center  flex flex-col w-[90%] gap-3">
         <h2 className="text-[#000000] lg:text-[40px] xl:leading-[55px] text-2xl font-semibold  leading-normal">
           Services{""}
@@ -195,9 +195,8 @@ function Feature() {
             {sideMenu.map((item, index) => (
               <div key={index}>
                 <div
-                  className={`flex flex-col justify-start p-4 gap-4 hover:bg-[#585DCC80] rounded-lg md:mt-3 mt-5 cursor-pointer ${
-                    selectedMenu.title === item.title && "bg-[#585DCC80]"
-                  }`}
+                  className={`flex flex-col justify-start p-4 gap-4 hover:bg-[#585DCC80] rounded-lg md:mt-3 mt-5 cursor-pointer ${selectedMenu.title === item.title && "bg-[#585DCC80]"
+                    }`}
                   onClick={() => handleMenuClick(index)}
                 >
                   <div className="flex items-center gap-4">
@@ -213,11 +212,10 @@ function Feature() {
 
                 {/* Accordion: Only show content in mobile if selected */}
                 <div
-                  className={`transition-all duration-300 ease-in-out ${
-                    selectedMenu?.title === item.title
-                      ? "max-h-screen opacity-100"
-                      : "max-h-0 opacity-0 overflow-hidden"
-                  } md:max-h-none md:opacity-100`}
+                  className={`transition-all duration-300 ease-in-out ${selectedMenu?.title === item.title
+                    ? "max-h-screen opacity-100"
+                    : "max-h-0 opacity-0 overflow-hidden"
+                    } md:max-h-none md:opacity-100`}
                 >
                   <div className="text-white mt-4 md:hidden">
                     <h2 className="text-2xl leading-normal md:block hidden">
